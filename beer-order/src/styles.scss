@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "DM Sans";
+  src: local("DM Sans"), url(./assets/fonts/DMSans/DMSans-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "DM Sans Medium";
+  src: local("DM Sans Medium"), url(./assets/fonts/DMSans/DMSans-Medium.ttf) format("truetype");
+}
+body{margin:0;padding:0;}
