@@ -1,0 +1,30 @@
+:host{
+  position:absolute;
+  bottom:0;
+  right:0;
+  left:0;
+  margin: 70px 44px;
+  font-family: 'DM Sans Medium';
+  font-size: 16pt;
+  #notif_container{
+    padding: 15px;
+    background-color: #030303;
+    border-radius: 15px;
+    height: 40px;
+    #notif_text{
+      display: inline-block;
+      color: #FBFBFB;
+      padding:5px;
+    }
+    #notif_number{
+      background-color: #FBFBFB;
+      color: #F2994A;
+      float: right;
+      width: 32px;
+      height:32px;
+      text-align: center;
+      padding:6px;
+      border-radius: 10px;
+    }
+  }
+}
