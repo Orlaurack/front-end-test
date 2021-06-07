@@ -1,4 +1,23 @@
 
 :host{
   font-family: "DM Sans";
+  .message{
+    display: block;
+    width: 100%;
+    font-size: 22pt;
+    padding: 48px 0;
+    text-align: center;
+    animation: in 300ms ease-in-out;
+    &#message_out{
+      animation: out 300ms ease-in-out;
+    }
+  }
+  @keyframes in { // text aparition
+    from {transform:translate(0,20px); opacity: 0;}
+    to {transform:translate(0,0); opacity: 1;}
+  }
+  @keyframes out { // text disparition
+    from {transform:translate(0,0); opacity: 1;}
+    to {transform:translate(0,-20px); opacity: 0;}
+  }
 }
