@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as data from '../assets/messages.json';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  messages = (data as any).default;
+  message = this.messages[this.slider_value];
+  max = this.messages.length-1;
   toggle_message = true;
   animation_cooldown = true;
   next_message = '';
