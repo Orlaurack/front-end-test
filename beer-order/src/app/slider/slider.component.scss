@@ -1,0 +1,34 @@
+input[type="range"] {
+  outline: 0;
+  border: 0;
+  width: 400px;
+  max-width: 100%;
+  margin: 48px 0;
+  background-color: transparent;
+  transition: 0.5s ease-in-out;
+  &::-webkit-slider-thumb,&::-moz-range-thumb {
+
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: #fbfbfb;
+    border: #030303 3px solid;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  // Firefox
+  &::-moz-range-progress {
+    background-color: #030303;
+  }
+  &::-moz-range-track {
+    background-color: #cecece;
+  }
+  // IE
+  &::-ms-fill-lower {
+    background-color: #030303;
+  }
+  &::-ms-fill-upper {
+    background-color: #cecece;
+  }
+}
