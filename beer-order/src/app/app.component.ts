@@ -6,7 +6,10 @@ import * as data from '../assets/messages.json';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
+  title = "Beer order";
+  slider_value = 0;
   messages = (data as any).default;
   message = this.messages[this.slider_value];
   max = this.messages.length-1;
@@ -16,6 +19,32 @@ export class AppComponent {
   border_effect_height = '0px';
   timout_border_effect;
   bubbles: {top:number, left:number, size:number, speed:number, to_down: boolean, opacity: string }[];
+
+  constructor() {
+    this.bubbles = [];
+
+    const create_bubble =()=>{
+      this.bubbles.push({
+        left: Math.random()*100, // 0% to 100%
+        top: Math.random()*100, // 0% to 100%
+        size: Math.random()*20+10, // 10px to 30px
+        speed: Math.round((Math.random()*3000)+3000), // 3000ms to 6000ms
+        to_down: 1>Math.random()*5, // 1 chance to 5;
+        opacity: (Math.floor(Math.random()*2)*127+128).toString(16) // 80 or ff
+      });
+
+      setTimeout(() => {
+        this.bubbles.shift();
+      }, this.bubbles[this.bubbles.length-1].speed);
+
+      setTimeout(() => {
+        create_bubble(); // recursive function
+      }, (10-this.slider_value+1) * 300 ); // +slider_value = -couldown time = +bubbles
+    };
+
+    create_bubble();
+  }
+
   changeValue(event:number){
     const new_slider_value = Math.round(event/10);
 

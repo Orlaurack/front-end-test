@@ -1,6 +1,91 @@
 
 :host{
   font-family: "DM Sans";
+  padding: 28px;
+  width: 384px;
+  height: 894px;
+  outline: 5px solid black;
+  border-radius: 40px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  transition-delay: 0ms;
+  box-shadow: -60px 60px #00000020;
+
+  #background{
+    border-top: transparent 3.1vh solid;
+    pointer-events: none;
+    background: #F2994A;
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: -1;
+    transition: 800ms 100ms ease-in-out;
+    .bubble{
+      opacity: 0;
+      border-width:2px;
+      border-style: solid;
+      border-radius: 100%;
+      animation: bubble 3000ms ease-in;
+      position: absolute;
+    }
+  }
+  #waves{
+    background: url("../assets/images/beerbackground.svg") 0 0;
+    background-size: 300px 100%;
+    background-repeat: repeat-x;
+    animation: waves 500ms linear infinite;
+    transition: height 500ms ease-in-out, bottom 800ms 100ms ease-in-out ;
+    pointer-events: none;
+    z-index: -2;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+  }
+  #foam{
+    background-size:100%;
+    background-image: url("../assets/images/foam.svg");
+    z-index: -1;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    position:absolute;
+    left:0;
+    right: 0;
+    bottom:0;
+    transition: 1500ms ease-in-out 500ms;
+  }
+
+
+  #top-bar{
+    margin: 45px 0;
+    #cross{
+      position: absolute;
+      cursor: pointer;
+      background-image: url('../assets/images/cross.svg');
+      width: 18px;
+      height: 18px;
+    }
+    #top-bar-title{
+      pointer-events: none;
+      width: 100%;
+      text-align: center;
+      font-size: 17pt;
+      line-height: 85%;
+      transform:translate(-10px);
+    }
+  }
+  #question{
+    margin-top: 72px;
+    line-height: 120%;
+    font-size: 29pt;
+    text-align: center;
+    font-family: 'DM Sans Medium';
+  }
   .message{
     display: block;
     width: 100%;
@@ -12,6 +97,7 @@
       animation: out 300ms ease-in-out;
     }
   }
+
   @keyframes in { // text aparition
     from {transform:translate(0,20px); opacity: 0;}
     to {transform:translate(0,0); opacity: 1;}
@@ -19,5 +105,23 @@
   @keyframes out { // text disparition
     from {transform:translate(0,0); opacity: 1;}
     to {transform:translate(0,-20px); opacity: 0;}
+  }
+
+  @keyframes waves { // waves movement
+    from {background-position-x: 0;}
+    to {background-position-x: 300px;}
+  }
+
+  @keyframes bubble {
+    0% {opacity: 0; transform: translateY(0);}
+    20% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;transform: translateY(-150px);}
+  }
+  @keyframes bubble_down {
+    0% {opacity: 0; transform: translateY(0);}
+    20% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;transform: translateY(50px);}
   }
 }
