@@ -16,5 +16,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## gh-page
 
-[Beer order page](https://orlaurack.github.io/front-end-test/).
+[orlaurack.github.io/front-end-test](https://orlaurack.github.io/front-end-test/)
 
