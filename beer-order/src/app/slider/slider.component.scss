@@ -1,3 +1,4 @@
+
 input[type="range"] {
   outline: 0;
   border: 0;
@@ -31,4 +32,45 @@ input[type="range"] {
   &::-ms-fill-upper {
     background-color: #cecece;
   }
+}
+
+
+input[type=range] {
+  height: 3px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 100%;
+  margin: 48px 0;
+  background-color: #cecece;
+
+}
+
+input[type=range] {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 10px + var(--ratio) * (100% - 10px));
+}
+
+input[type=range]::-webkit-slider-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #fbfbfb;
+  border: 3px #303030 solid;
+  box-shadow: 0 0 2px black;
+  margin-top: calc(3px * 0.5 - 40px * 0.5);
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 0.5em;
+  background: #cecece;
+  border: none;
+  box-shadow: none;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: linear-gradient(#030303,#030303) 0/var(--sx) 100% no-repeat, #cecece;
 }

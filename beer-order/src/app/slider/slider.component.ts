@@ -19,5 +19,10 @@ export class SliderComponent implements OnInit {
 
   update(event){
     this.onslide.emit(event.target.value);
+    const el = event.target;
+    el.style.setProperty("--value", el.value);
+    el.style.setProperty("--min", el.min === "" ? "0" : el.min);
+    el.style.setProperty("--max", el.max === "" ? "100" : el.max);
+    el.style.setProperty("--value", el.value);
   }
 }
