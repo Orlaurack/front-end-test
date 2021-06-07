@@ -10,7 +10,10 @@
     padding: 15px;
     background-color: #030303;
     border-radius: 15px;
-    height: 40px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     #notif_text{
       display: inline-block;
       color: #FBFBFB;
@@ -19,12 +22,12 @@
     #notif_number{
       background-color: #FBFBFB;
       color: #F2994A;
-      float: right;
       width: 32px;
       height:32px;
       text-align: center;
-      padding:6px;
+      padding:5px;
       border-radius: 10px;
+      align-self:center;
     }
   }
 }
