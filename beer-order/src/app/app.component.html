@@ -27,7 +27,7 @@
 
 <slider min=0 max=100 value=0 (onslide)="changeValue($event)"></slider>
 
-<span class=message [style.display]='display?"":"none"'>{{message}}</span>
-<span class=message id=message_out [style.display]='!display?"":"none"'>{{message}}</span>
+<span class=message [style.display]='toggle_message?"":"none"'>{{message}}</span>
+<span class=message id=message_out [style.display]='!toggle_message?"":"none"'>{{message}}</span>
 
 <notif text='Place your order' number="{{slider_value}}"></notif>
